@@ -13,16 +13,16 @@ namespace StudentPortalCapstone.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Attendance()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Manage Attendance";
 
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Assignments()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Manage Assignments";
 
             return View();
         }
