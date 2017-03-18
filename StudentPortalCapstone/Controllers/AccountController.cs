@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using StudentPortalCapstone.Models;
 
+
 namespace StudentPortalCapstone.Controllers
 {
     [Authorize]
@@ -17,9 +18,11 @@ namespace StudentPortalCapstone.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ApplicationDbContext db;
 
         public AccountController()
         {
+            db = new ApplicationDbContext();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -149,6 +152,18 @@ namespace StudentPortalCapstone.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
+            User userInput = new User();
+
+            userInput.FirstName = model.FirstName;
+            userInput.LastName = model.LastName;
+            userInput.Email = model.Email;
+            userInput.Role = model.Role.Roles.ToString();
+
+            db.Peoples.Add(userInput);
+            db.SaveChanges();
+
+
+
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
