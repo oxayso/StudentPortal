@@ -13,6 +13,13 @@ namespace StudentPortalCapstone.Controllers
             return View();
         }
 
+        public ActionResult Upload(HttpPostedFileBase file)
+        {
+            string path = Server.MapPath("~/Files/" + file.FileName);
+            file.SaveAs(path); // saving file
+            return Content("works");
+        }
+
         public ActionResult Attendance()
         {
             ViewBag.Message = "Manage Attendance";
