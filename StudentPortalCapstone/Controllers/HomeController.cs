@@ -29,12 +29,21 @@ namespace StudentPortalCapstone.Controllers
             return View();
         }
 
+        public ActionResult Download()
+        {
+            Response.ContentType = "application/octect-stream";
+            Response.AppendHeader("content-disposition", "filename=Olivia.rtf");
+            Response.TransmitFile(Server.MapPath("~/Files/Olivia.rtf"));
+            Response.End();
+            return View();
+        }
 
         public ActionResult Upload(HttpPostedFileBase file)
         {
             string path = Server.MapPath("~/Files/" + file.FileName);
             file.SaveAs(path); // saving file
-            return Content("works");
+            return View();
+            //return Content("works");
         }
 
         public ActionResult Attendance()
