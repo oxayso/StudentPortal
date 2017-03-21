@@ -24,6 +24,7 @@ namespace StudentPortalCapstone.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<User> Peoples { get; set; }
+        public DbSet<Roster> Rosters { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

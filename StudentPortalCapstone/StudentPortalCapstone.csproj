@@ -171,6 +171,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RostersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -182,10 +183,15 @@
     <Compile Include="Migrations\201703182042476_Register.Designer.cs">
       <DependentUpon>201703182042476_Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703210314010_AddedRosterClass.cs" />
+    <Compile Include="Migrations\201703210314010_AddedRosterClass.Designer.cs">
+      <DependentUpon>201703210314010_AddedRosterClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Roster.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -574,6 +580,12 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Rosters\Create.cshtml" />
+    <Content Include="Views\Rosters\Delete.cshtml" />
+    <Content Include="Views\Rosters\Details.cshtml" />
+    <Content Include="Views\Rosters\Edit.cshtml" />
+    <Content Include="Views\Rosters\Index.cshtml" />
+    <Content Include="Views\Rosters\AddAClass.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -591,6 +603,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703182042476_Register.resx">
       <DependentUpon>201703182042476_Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703210314010_AddedRosterClass.resx">
+      <DependentUpon>201703210314010_AddedRosterClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
