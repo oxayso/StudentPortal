@@ -169,6 +169,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\EnrollmentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RostersController.cs" />
@@ -187,8 +188,13 @@
     <Compile Include="Migrations\201703210314010_AddedRosterClass.Designer.cs">
       <DependentUpon>201703210314010_AddedRosterClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703210345107_AddedEnrollmentModel.cs" />
+    <Compile Include="Migrations\201703210345107_AddedEnrollmentModel.Designer.cs">
+      <DependentUpon>201703210345107_AddedEnrollmentModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Enrollment.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Roster.cs" />
@@ -586,6 +592,13 @@
     <Content Include="Views\Rosters\Edit.cshtml" />
     <Content Include="Views\Rosters\Index.cshtml" />
     <Content Include="Views\Rosters\AddAClass.cshtml" />
+    <Content Include="Views\Enrollments\Create.cshtml" />
+    <Content Include="Views\Enrollments\Delete.cshtml" />
+    <Content Include="Views\Enrollments\Details.cshtml" />
+    <Content Include="Views\Enrollments\Edit.cshtml" />
+    <Content Include="Views\Enrollments\Index.cshtml" />
+    <Content Include="Views\Home\Teacher.cshtml" />
+    <None Include="Views\Shared\_LayoutTeacher.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -606,6 +619,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703210314010_AddedRosterClass.resx">
       <DependentUpon>201703210314010_AddedRosterClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703210345107_AddedEnrollmentModel.resx">
+      <DependentUpon>201703210345107_AddedEnrollmentModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
