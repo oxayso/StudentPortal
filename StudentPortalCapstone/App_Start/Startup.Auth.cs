@@ -58,6 +58,7 @@ namespace StudentPortalCapstone
             //   appId: "",
             //   appSecret: "");
 
+
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
             //    ClientId = "",
