@@ -603,6 +603,8 @@
     <Content Include="Views\Enrollments\UploadPic.cshtml" />
     <Content Include="Views\Enrollments\ShowList.cshtml" />
     <Content Include="Views\Enrollments\UploadPicture.cshtml" />
+    <Content Include="Views\Enrollments\Search.cshtml" />
+    <Content Include="Views\Enrollments\FindPerson.cshtml" />
     <None Include="Views\Shared\_LayoutTeacher.cshtml" />
   </ItemGroup>
   <ItemGroup>

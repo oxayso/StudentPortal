@@ -20,6 +20,17 @@ namespace StudentPortalCapstone.Controllers
             var enrollments = db.Enrollments.Include(e => e.Roster).Include(e => e.User);
             return View(enrollments.ToList());
         }
+
+        public ActionResult Search()
+        {
+            return View();
+        }
+
+        public ActionResult FindPerson(User person)
+        {
+            var personRecord = db.Peoples.Where(a => a.FirstName.Contains(person.FirstName)).ToList();
+            return View("FindPerson", personRecord);
+        }
         public ActionResult UploadPic()
         {
             ViewBag.RosterId = new SelectList(db.Rosters, "Id", "ClassName");
