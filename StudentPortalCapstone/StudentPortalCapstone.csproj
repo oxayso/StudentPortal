@@ -600,11 +600,15 @@
     <Content Include="Views\Enrollments\Edit.cshtml" />
     <Content Include="Views\Enrollments\Index.cshtml" />
     <Content Include="Views\Home\Teacher.cshtml" />
+    <Content Include="Views\Enrollments\UploadPic.cshtml" />
+    <Content Include="Views\Enrollments\ShowList.cshtml" />
+    <Content Include="Views\Enrollments\UploadPicture.cshtml" />
     <None Include="Views\Shared\_LayoutTeacher.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Files\" />
+    <Folder Include="ProfilePics\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

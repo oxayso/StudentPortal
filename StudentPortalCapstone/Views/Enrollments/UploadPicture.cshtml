@@ -1,0 +1,64 @@
+﻿@model StudentPortalCapstone.Models.User
+
+@{
+    ViewBag.Title = "UploadPicture";
+    Layout = "~/Views/Shared/_LayoutTeacher.cshtml";
+}
+
+<h2>Upload Picture</h2>
+
+<div>
+    <h4>Student Information</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <img style="height:50px"; class="img-responsive" src="~/ProfilePics/@(Model.FirstName)@(Model.LastName).jpg" />
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Role)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Role)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Roles)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Roles)
+        </dd>
+
+    </dl>
+</div>
+
+@using (Html.BeginForm("UploadToProfile", "Enrollments", FormMethod.Post, new {enctype = "multipart/form-data"}))
+{
+    <input type="file" name="file" id="file" />
+    <input type="submit" value="Upload Picture" />
+}

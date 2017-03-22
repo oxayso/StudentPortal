@@ -20,6 +20,31 @@ namespace StudentPortalCapstone.Controllers
             var enrollments = db.Enrollments.Include(e => e.Roster).Include(e => e.User);
             return View(enrollments.ToList());
         }
+        public ActionResult UploadPic()
+        {
+            ViewBag.RosterId = new SelectList(db.Rosters, "Id", "ClassName");
+            return View();
+        }
+
+        public ActionResult UploadPicture(int? id)
+        {
+            var person = db.Peoples.Find(id);
+
+            return View(person);
+        }
+
+        public ActionResult ShowList(Enrollment enrollment)
+        {
+            var classList = db.Enrollments.Include(a => a.Roster).Include(y => y.User).Where(y => y.RosterId == enrollment.RosterId);
+            return View(classList);
+        }
+
+        public ActionResult UploadToProfile(HttpPostedFileBase file)
+        {           
+            string path = Server.MapPath("~/ProfilePics/" + file.FileName);
+            file.SaveAs(path);
+            return RedirectToAction("UploadPic");
+        }
 
         // GET: Enrollments/Details/5
         public ActionResult Details(int? id)
