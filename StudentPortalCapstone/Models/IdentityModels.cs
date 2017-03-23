@@ -26,6 +26,8 @@ namespace StudentPortalCapstone.Models
         public DbSet<User> Peoples { get; set; }
         public DbSet<Roster> Rosters { get; set; }
         public DbSet<Enrollment> Enrollments { get; set; }
+
+        public DbSet<Assignments> Assignments { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

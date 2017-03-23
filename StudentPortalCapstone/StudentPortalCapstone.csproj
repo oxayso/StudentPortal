@@ -169,6 +169,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AssignmentsController.cs" />
     <Compile Include="Controllers\EnrollmentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -192,8 +193,13 @@
     <Compile Include="Migrations\201703210345107_AddedEnrollmentModel.Designer.cs">
       <DependentUpon>201703210345107_AddedEnrollmentModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703232217125_add-migration ModelForAssignment.cs" />
+    <Compile Include="Migrations\201703232217125_add-migration ModelForAssignment.Designer.cs">
+      <DependentUpon>201703232217125_add-migration ModelForAssignment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Assignments.cs" />
     <Compile Include="Models\Enrollment.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -214,6 +220,7 @@
     <Content Include="Content\Images\Attendance.jpg" />
     <Content Include="Content\Images\Choose.png" />
     <Content Include="Content\Images\Classroom.png" />
+    <Content Include="Content\Images\Education.png" />
     <Content Include="Content\Images\Illustration.png" />
     <Content Include="Content\Images\Results.jpg" />
     <Content Include="Content\Images\ResultsMagnifyingGlass.png" />
@@ -614,6 +621,13 @@
     <Content Include="Views\Enrollments\UploadPicture.cshtml" />
     <Content Include="Views\Enrollments\Search.cshtml" />
     <Content Include="Views\Enrollments\FindPerson.cshtml" />
+    <Content Include="Views\Assignments\Create.cshtml" />
+    <Content Include="Views\Assignments\Delete.cshtml" />
+    <Content Include="Views\Assignments\Details.cshtml" />
+    <Content Include="Views\Assignments\Edit.cshtml" />
+    <Content Include="Views\Assignments\Index.cshtml" />
+    <Content Include="Views\Assignments\FindAssignmentForClass.cshtml" />
+    <Content Include="Views\Assignments\DisplayAssignments.cshtml" />
     <None Include="Views\Shared\_LayoutTeacher.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -639,6 +653,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703210345107_AddedEnrollmentModel.resx">
       <DependentUpon>201703210345107_AddedEnrollmentModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703232217125_add-migration ModelForAssignment.resx">
+      <DependentUpon>201703232217125_add-migration ModelForAssignment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

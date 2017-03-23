@@ -28,8 +28,19 @@ namespace StudentPortalCapstone.Controllers
 
         public ActionResult FindPerson(User person)
         {
-            var personRecord = db.Peoples.Where(a => a.FirstName.Contains(person.FirstName)).ToList();
-            return View("FindPerson", personRecord);
+
+            string[] words = person.FirstName.Split(' ');
+            var firstName = words[0];
+            var personRecord = db.Peoples.Where(a => a.FirstName.Contains(firstName) || a.LastName.Contains(firstName)).ToList();
+            //if (personRecord == null && words.Length > 1)
+            //{
+            //    var lastName = words[1];
+            //    var personRecordFullName = db.Users.Where(a => a.FirstName.Contains(firstName) || a.LastName.Contains(lastName)).ToList();
+            //    return View("FindPerson", personRecordFullName);
+            //}
+          
+            return View("FindPerson",personRecord);
+
         }
         public ActionResult UploadPic()
         {

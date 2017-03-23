@@ -27,6 +27,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
                         <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Classes", "Index", "Rosters")</li>
                             <li>@Html.ActionLink("Add Class", "AddAClass", "Rosters")</li>
                             <li>@Html.ActionLink("Add Student", "Create", "Enrollments")</li>
                         </ul>
@@ -39,9 +40,18 @@
                             <li>@Html.ActionLink("Search", "Search", "Enrollments")</li>
                         </ul>
                     </li>
+                    
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Assignments<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Add Assignments", "Create", "Assignments")</li>
+                            <li>@Html.ActionLink("Assignments", "FindAssignmentForClass", "Assignments")</li>  
+                            <li>@Html.ActionLink("Grades Assignments", "FindClassForAssignments", "ReportCards")</li>  
+                        </ul>
+                    </li>
 
-                    <li>@Html.ActionLink("Attendance", "Attendance", "Home")</li>
-                    <li>@Html.ActionLink("Assignments", "Assignments", "Home")</li>                 
+                    <li>@Html.ActionLink("Attendance", "Attendance", "Home")</li>                              
                     <li>@Html.ActionLink("Grades", "Contact", "Home")</li>
                   
 

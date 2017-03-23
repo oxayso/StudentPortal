@@ -1,0 +1,43 @@
+﻿@model StudentPortalCapstone.Models.Assignments
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutTeacher.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Assignments</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Roster.ClassName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Roster.ClassName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AssignmentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssignmentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxPts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxPts)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

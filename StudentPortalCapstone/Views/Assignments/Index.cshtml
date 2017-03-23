@@ -1,0 +1,46 @@
+﻿@model IEnumerable<StudentPortalCapstone.Models.Assignments>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutTeacher.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Roster.ClassName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssignmentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaxPts)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Roster.ClassName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssignmentName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaxPts)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
