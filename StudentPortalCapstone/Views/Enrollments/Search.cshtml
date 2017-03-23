@@ -4,8 +4,8 @@
     ViewBag.Title = "Search";
     Layout = "~/Views/Shared/_LayoutTeacher.cshtml";
 }
-
-<h2>Search</h2>
+<br />
+<h2>Search for a specific student or instructor:</h2>
 
 @using (Html.BeginForm("FindPerson", "Enrollments"))
 {
@@ -22,9 +22,19 @@
         </div>
     </div>
 
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            @*<input type="submit" value="Find" class="btn btn-success" />*@
+   
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+        <center> <img src="https://s-media-cache-ak0.pinimg.com/originals/e9/65/20/e96520439e9867e64a7164fee0a48a01.gif" ></center>
+
+    </head>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @*<input type="submit" value="Find" class="btn btn-success" />*@
+            </div>
         </div>
-    </div>
-}
+        }

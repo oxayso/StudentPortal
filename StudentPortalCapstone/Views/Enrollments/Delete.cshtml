@@ -11,7 +11,7 @@
 <div>
     <h4>Enrollment</h4>
     <hr />
-    <dl class="dl-horizontal">
+    @*<dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Roster.ClassName)
         </dt>
@@ -28,7 +28,7 @@
             @Html.DisplayFor(model => model.User.FirstName)
         </dd>
 
-    </dl>
+    </dl>*@
 
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()

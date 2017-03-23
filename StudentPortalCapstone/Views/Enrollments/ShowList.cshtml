@@ -5,48 +5,76 @@
     Layout = "~/Views/Shared/_LayoutTeacher.cshtml";
 }
 
-<h2>ShowList</h2>
+@*<h2>ShowList</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Roster.ClassName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.User.FirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.User.LastName)
-        </th>
-        <th></th>
-    </tr>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            <img style="height: 50px"; class="img-responsive" src="~/ProfilePics/@(item.User.FirstName)@(item.User.LastName).jpg" />
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Roster.ClassName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.User.FirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.User.LastName)
-        </td>
-        <td>
-            @Html.ActionLink("Upload Photo", "UploadPicture", "Enrollments", new { id = item.UserId }, new { @class = "btn btn-success" })
+<th>
+    
+</th>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css"><br />
+    <center> <img src="~/Content/Images/Students.png"></center>
+
+</head>
+<body>
+    <br />
+<th>
+    
+</th>
+
+    <table class="table">
+        <tr><th>
+                
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Roster.ClassName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User.Email)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img style="height: 50px" ; class="img-responsive" src="~/ProfilePics/@(item.User.FirstName)@(item.User.LastName).jpg" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Roster.ClassName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.Email)
+                </td>
+                <td>
+                    @Html.ActionLink("Upload Photo", "UploadPicture", "Enrollments", new { id = item.UserId }, new { @class = "btn btn-success" })
 
 
-            @*@Html.ActionLink("Edit", "Edit", new {id = item.Id}) |
-            @Html.ActionLink("Details", "Details", new {id = item.Id}) |
-            @Html.ActionLink("Delete", "Delete", new {id = item.Id})*@
-        </td>
-    </tr>
-}
+                    @*@Html.ActionLink("Edit", "Edit", new {id = item.Id}) |
+                        @Html.ActionLink("Details", "Details", new {id = item.Id}) |
+                        @Html.ActionLink("Delete", "Delete", new {id = item.Id})*@
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>

@@ -4,16 +4,16 @@
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_LayoutTeacher.cshtml";
 }
-
+<br />
 <h2>Add a Student</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>Enrollment</h4>
+      
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -40,10 +40,20 @@
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to Students", "Index")
-</div>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+    <center> <img src="~/Content/Images/superhero.png" class="w3-circle"></center>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+</head>
+<body>
+
+    @*<div>
+        @Html.ActionLink("Back to Students", "Index")
+    </div>*@
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
