@@ -13,6 +13,7 @@ namespace StudentPortalCapstone.Models
         [DisplayName("Assignment Name")]
         public string AssignmentName { get; set; }
         [ForeignKey("Roster")]
+        [DisplayName("Class Name")]
         public int RosterId { get; set; }
         public Roster Roster { get; set; }
 

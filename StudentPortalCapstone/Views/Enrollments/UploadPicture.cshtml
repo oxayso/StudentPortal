@@ -14,8 +14,11 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            <img style="height:50px"; class="img-responsive" src="~/ProfilePics/@(Model.FirstName)@(Model.LastName).jpg" />
+            <center><img style="height:50px" ; class="img-responsive" src="~/ProfilePics/@(Model.FirstName)@(Model.LastName).jpg" /></center>
         </dt>
+        <dd>
+            
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.FirstName)
         </dt>
@@ -48,13 +51,15 @@
             @Html.DisplayFor(model => model.Role)
         </dd>
 
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.Roles)
-        </dt>
-
+        </dt>*@
         <dd>
-            @Html.DisplayFor(model => model.Roles)
+            
         </dd>
+        @*<dd>
+            @Html.DisplayFor(model => model.Roles)
+        </dd>*@
 
     </dl>
 </div>

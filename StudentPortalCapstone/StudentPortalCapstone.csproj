@@ -216,10 +216,15 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\AddAssignment.png" />
+    <Content Include="Content\Images\AddAssignments.png" />
     <Content Include="Content\Images\Assignment-Management.png" />
     <Content Include="Content\Images\Attendance.jpg" />
     <Content Include="Content\Images\Choose.png" />
     <Content Include="Content\Images\Classroom.png" />
+    <Content Include="Content\Images\CodingEverything6.png" />
+    <Content Include="Content\Images\CurrentClasses.png" />
+    <Content Include="Content\Images\DisplayAssignments.png" />
     <Content Include="Content\Images\Education.png" />
     <Content Include="Content\Images\Illustration.png" />
     <Content Include="Content\Images\Results.jpg" />
@@ -230,6 +235,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="ProfilePics\AndrewLlewellyn.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\ckeditor\adapters\jquery.js" />
@@ -633,7 +639,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Files\" />
-    <Folder Include="ProfilePics\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
