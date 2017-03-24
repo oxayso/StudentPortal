@@ -38,19 +38,24 @@ namespace StudentPortalCapstone.Controllers
             return View();
         }
 
-        public ActionResult Upload(HttpPostedFileBase file)
-        {
-            string path = Server.MapPath("~/Files/" + file.FileName);
-            file.SaveAs(path); // saving file
-            return View();
-            //return Content("works");
-        }
+       
 
         public ActionResult Attendance()
         {
-            ViewBag.Message = "Manage Attendance";
+            var userEmail = User.Identity.Name;
 
-            return View();
+            if (userEmail == "") { return View(); }
+            var person = db.Peoples.Single(a => a.Email == userEmail);
+            //return Content("This is my Role: " + person.Role);
+            if (person.Role == "Teacher")
+            {
+                return View();
+            }
+
+            return View("AttendanceStudent");
+            //ViewBag.Message = "Manage Attendance";
+
+            //return View();
         }
 
         public ActionResult Assignments()

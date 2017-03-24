@@ -29,6 +29,19 @@ namespace StudentPortalCapstone.Controllers
 
             return View("IndexStudent");
         }
+        public ActionResult UploadRequest()
+        {
+            return View("UploadRequest");
+        }
+        [HttpPost]
+        public ActionResult Upload(HttpPostedFileBase file)
+        {
+            string path = Server.MapPath("~/Assignments/" + FileNameSaver.FileName);
+            file.SaveAs(path); // saving file
+
+            return RedirectToAction("FindAssignmentForClass");
+            
+        }
 
         // GET: Assignments/Details/5
         public ActionResult Details(int? id)
@@ -93,7 +106,8 @@ namespace StudentPortalCapstone.Controllers
             {
                 db.Assignments.Add(assignments);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                FileNameSaver.FileName = assignments.AssignmentName;
+                return RedirectToAction("UploadRequest");
             }
 
             ViewBag.RosterId = new SelectList(db.Rosters, "Id", "ClassName", assignments.RosterId);

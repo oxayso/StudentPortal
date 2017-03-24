@@ -1,0 +1,51 @@
+﻿@model StudentPortalCapstone.Models.ReportCard
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutTeacher.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ReportCard</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Assignments.AssignmentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Assignments.AssignmentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentPts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentPts)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasBeenGraded)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasBeenGraded)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

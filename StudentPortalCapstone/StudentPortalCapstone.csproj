@@ -173,6 +173,7 @@
     <Compile Include="Controllers\EnrollmentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ReportCardsController.cs" />
     <Compile Include="Controllers\RostersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -197,12 +198,19 @@
     <Compile Include="Migrations\201703232217125_add-migration ModelForAssignment.Designer.cs">
       <DependentUpon>201703232217125_add-migration ModelForAssignment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703240223000_ModelForReportCard.cs" />
+    <Compile Include="Migrations\201703240223000_ModelForReportCard.Designer.cs">
+      <DependentUpon>201703240223000_ModelForReportCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Assignments.cs" />
+    <Compile Include="Models\ClassList.cs" />
     <Compile Include="Models\Enrollment.cs" />
+    <Compile Include="Models\FileNameSaver.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ReportCard.cs" />
     <Compile Include="Models\Roster.cs" />
     <Compile Include="Models\SlackClient.cs" />
     <Compile Include="Models\SlackClientTest.cs" />
@@ -640,10 +648,21 @@
     <Content Include="Views\Assignments\FindAssignStudent.cshtml" />
     <Content Include="Views\Assignments\DisplayAssignStudent.cshtml" />
     <Content Include="Views\Home\AttendanceStudent.cshtml" />
+    <Content Include="Views\ReportCards\Create.cshtml" />
+    <Content Include="Views\ReportCards\Delete.cshtml" />
+    <Content Include="Views\ReportCards\Details.cshtml" />
+    <Content Include="Views\ReportCards\Edit.cshtml" />
+    <Content Include="Views\ReportCards\Index.cshtml" />
+    <Content Include="Views\ReportCards\FindClassForAssignments.cshtml" />
+    <Content Include="Views\ReportCards\DisplayAssignments.cshtml" />
+    <Content Include="Views\ReportCards\ShowStudentsAssignments.cshtml" />
+    <Content Include="Views\ReportCards\AddGrade.cshtml" />
+    <Content Include="Views\Assignments\UploadRequest.cshtml" />
     <None Include="Views\Shared\_LayoutTeacher.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Assignments\" />
     <Folder Include="Files\" />
   </ItemGroup>
   <ItemGroup>
@@ -667,6 +686,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703232217125_add-migration ModelForAssignment.resx">
       <DependentUpon>201703232217125_add-migration ModelForAssignment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703240223000_ModelForReportCard.resx">
+      <DependentUpon>201703240223000_ModelForReportCard.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
