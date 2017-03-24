@@ -1,0 +1,33 @@
+﻿@model StudentPortalCapstone.Models.Assignments
+
+@{
+    ViewBag.Title = "FindClassToEditGrade";
+    Layout = "~/Views/Shared/_LayoutTeacher.cshtml";
+}
+
+
+
+@using (Html.BeginForm("DisplayAssignmentsForEdit", "ReportCards"))
+{
+
+
+    <div class="form-horizontal">
+
+        <hr />
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RosterId, "RosterId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("RosterId", null, htmlAttributes: new { @class = "form-control" })
+                @*@Html.ValidationMessageFor(model => model.Id, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Display" class="btn btn-warning" />
+            </div>
+        </div>
+    </div>
+}

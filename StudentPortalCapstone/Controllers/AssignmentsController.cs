@@ -29,6 +29,19 @@ namespace StudentPortalCapstone.Controllers
 
             return View("IndexStudent");
         }
+
+        public ActionResult Download(int? id)
+        {
+            var assignment = db.Assignments.Find(id);
+            var filename = "filename=" + assignment.AssignmentName;
+            var path = "~/Assignments/" + assignment.AssignmentName;
+
+            Response.ContentType = "application/octect-stream";
+            Response.AppendHeader("content-disposition", filename);
+            Response.TransmitFile(Server.MapPath(path));
+            Response.End();
+            return View();
+        }
         public ActionResult UploadRequest()
         {
             return View("UploadRequest");
@@ -42,6 +55,8 @@ namespace StudentPortalCapstone.Controllers
             return RedirectToAction("FindAssignmentForClass");
             
         }
+
+       
 
         // GET: Assignments/Details/5
         public ActionResult Details(int? id)
@@ -71,6 +86,12 @@ namespace StudentPortalCapstone.Controllers
             return View();
         }
 
+        public ActionResult DownloadAssignment()
+        {
+            ViewBag.RosterId = new SelectList(db.Rosters, "Id", "ClassName");
+            return View();
+        }
+
         public ActionResult FindAssignStudent()
         {
             ViewBag.RosterId = new SelectList(db.Rosters, "Id", "ClassName");
@@ -93,7 +114,12 @@ namespace StudentPortalCapstone.Controllers
 
         }
 
-        
+        public ActionResult DisplayAssignmentsForDownload(Assignments course)
+        {
+            var assignmentForClass = db.Assignments.Include(y => y.Roster).Where(y => y.Roster.Id == course.RosterId).ToList();
+            
+            return View(assignmentForClass);
+        }
 
         // POST: Assignments/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 

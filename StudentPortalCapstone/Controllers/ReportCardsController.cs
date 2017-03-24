@@ -27,7 +27,21 @@ namespace StudentPortalCapstone.Controllers
             return View();
         }
 
+        public ActionResult FindClassToEditGrade()
+        {
+            ViewBag.RosterId = new SelectList(db.Rosters, "Id", "ClassName");
+            return View();
+        }
+
         public ActionResult DisplayAssignments(Assignments course)
+        {
+            var assignmentForClass = db.Assignments.Include(y => y.Roster).Where(y => y.Roster.Id == course.RosterId).ToList();
+
+            ClassList.Students = db.Enrollments.Include(y => y.User).Where(y => y.RosterId == course.RosterId).ToList();
+            return View(assignmentForClass);
+        }
+
+        public ActionResult DisplayAssignmentsForEdit(Assignments course)
         {
             var assignmentForClass = db.Assignments.Include(y => y.Roster).Where(y => y.Roster.Id == course.RosterId).ToList();
 
@@ -62,6 +76,35 @@ namespace StudentPortalCapstone.Controllers
 
             return View(students);
         }
+
+        public ActionResult ShowStudentsAssignmentsForEdit(int? id)
+        {
+            if (db.ReportCards.Include(y => y.User).Where(y => y.AssignmentsId == id).Count() > 0)
+            {
+                var peeps = db.ReportCards.Include(y => y.User).Include(y => y.Assignments).Where(y => y.AssignmentsId == id).ToList();
+                ClassList.Students.Clear();
+
+                return View(peeps);
+            }
+
+            var reportCard = new ReportCard();
+
+            foreach (var a in ClassList.Students)
+            {
+                reportCard.UserId = a.UserId;
+                reportCard.AssignmentsId = Convert.ToInt32(id);
+                reportCard.StudentPts = 0;
+                reportCard.HasBeenGraded = false;
+                db.ReportCards.Add(reportCard);
+                db.SaveChanges();
+            }
+            ClassList.Students.Clear();
+
+            var students = db.ReportCards.Include(y => y.User).Include(y => y.Assignments).Where(y => y.AssignmentsId == id);
+
+            return View(students);
+        }
+
 
         public ActionResult AddGrade(int? id)
         {
