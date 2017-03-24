@@ -634,6 +634,12 @@
     <Content Include="Views\Assignments\Index.cshtml" />
     <Content Include="Views\Assignments\FindAssignmentForClass.cshtml" />
     <Content Include="Views\Assignments\DisplayAssignments.cshtml" />
+    <Content Include="Views\Shared\_LayoutStudent.cshtml" />
+    <Content Include="Views\Rosters\IndexStudent.cshtml" />
+    <Content Include="Views\Assignments\IndexStudent.cshtml" />
+    <Content Include="Views\Assignments\FindAssignStudent.cshtml" />
+    <Content Include="Views\Assignments\DisplayAssignStudent.cshtml" />
+    <Content Include="Views\Home\AttendanceStudent.cshtml" />
     <None Include="Views\Shared\_LayoutTeacher.cshtml" />
   </ItemGroup>
   <ItemGroup>

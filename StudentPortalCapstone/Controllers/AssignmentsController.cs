@@ -17,8 +17,17 @@ namespace StudentPortalCapstone.Controllers
         // GET: Assignments
         public ActionResult Index()
         {
-            var assignments = db.Assignments.Include(a => a.Roster);
-            return View(assignments.ToList());
+            var userEmail = User.Identity.Name;
+
+            if (userEmail == "") { return View(); }
+            var person = db.Peoples.Single(a => a.Email == userEmail);
+            //return Content("This is my Role: " + person.Role);
+            if (person.Role == "Teacher")
+            {
+                return View();
+            }
+
+            return View("IndexStudent");
         }
 
         // GET: Assignments/Details/5
@@ -49,11 +58,30 @@ namespace StudentPortalCapstone.Controllers
             return View();
         }
 
+        public ActionResult FindAssignStudent()
+        {
+            ViewBag.RosterId = new SelectList(db.Rosters, "Id", "ClassName");
+            return View("FindAssignStudent");
+        }
+
         public ActionResult DisplayAssignments(Assignments course)
         {
             var assignmentForClass = db.Assignments.Include(y => y.Roster).Where(y => y.Roster.Id == course.RosterId).ToList();
-            return View(assignmentForClass);
+            var userEmail = User.Identity.Name;
+  
+            var person = db.Peoples.Single(a => a.Email == userEmail);
+            //return Content("This is my Role: " + person.Role);
+            if (person.Role == "Teacher")
+            {
+                return View(assignmentForClass);
+            }
+
+            return View("DisplayAssignStudent", assignmentForClass);
+
         }
+
+        
+
         // POST: Assignments/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.

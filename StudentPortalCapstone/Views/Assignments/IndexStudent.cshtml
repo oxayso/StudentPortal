@@ -1,17 +1,17 @@
-﻿@model IEnumerable<StudentPortalCapstone.Models.Enrollment>
+﻿@model IEnumerable<StudentPortalCapstone.Models.Assignments>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutStudent.cshtml";
 }
+
 <br />
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
-    <br />
-    <center> <img src="~/Content/Images/Students.png"></center>
+    <center> <img src="~/Content/Images/DisplayAssignments.png"></center>
 
 </head>
 <body>
@@ -22,20 +22,14 @@
     </p>*@
     <table class="table">
         <tr>
-            <td>
-                
-            </td>
             <th>
                 @Html.DisplayNameFor(model => model.Roster.ClassName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.User.FirstName)
+                @Html.DisplayNameFor(model => model.AssignmentName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.User.LastName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User.Email)
+                @Html.DisplayNameFor(model => model.MaxPts)
             </th>
             <th></th>
         </tr>
@@ -43,25 +37,18 @@
         @foreach (var item in Model)
         {
             <tr>
-                
-                <td>
-                    <img style="height: 50px" ; class="img-responsive" src="~/ProfilePics/@(item.User.FirstName)@(item.User.LastName).jpg"/>
-                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Roster.ClassName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.User.FirstName)
+                    @Html.DisplayFor(modelItem => item.AssignmentName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.User.LastName)
+                    @Html.DisplayFor(modelItem => item.MaxPts)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.User.Email)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new {id = item.Id}, new {@class="btn btn-primary"}) |
-                    @*@Html.ActionLink("Details", "Details", new { id = item.Id }) |*@
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" }) |
+                    
                     @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
                 </td>
             </tr>

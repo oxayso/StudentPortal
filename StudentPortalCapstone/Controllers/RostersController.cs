@@ -17,7 +17,17 @@ namespace StudentPortalCapstone.Controllers
         // GET: Rosters
         public ActionResult Index()
         {
-            return View(db.Rosters.ToList());
+            var userEmail = User.Identity.Name;
+
+            if (userEmail == "") { return View("IndexStudent",db.Rosters.ToList()); }
+            var person = db.Peoples.Single(a => a.Email == userEmail);
+            //return Content("This is my Role: " + person.Role);
+            if (person.Role == "Teacher")
+            {
+                return View(db.Rosters.ToList());
+            }
+
+            return View("IndexStudent", db.Rosters.ToList());
         }
 
         public ActionResult AddAClass()
