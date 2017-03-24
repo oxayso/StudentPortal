@@ -4,7 +4,8 @@
     ViewBag.Title = "FindClassForAssignments";
     Layout = "~/Views/Shared/_LayoutTeacher.cshtml";
 }
-
+<br />
+<h1>Choose a class to view their assignments</h1>
 
 
 @using (Html.BeginForm("DisplayAssignments", "ReportCards"))
@@ -17,7 +18,7 @@
 
 
         <div class="form-group">
-            @Html.LabelFor(model => model.RosterId, "RosterId", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.RosterId, "Class Name", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("RosterId", null, htmlAttributes: new { @class = "form-control" })
                 @*@Html.ValidationMessageFor(model => model.Id, "", new { @class = "text-danger" })*@
@@ -26,8 +27,17 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Display" class="btn btn-warning" />
+                <input type="submit" value="Find" class="btn btn-success" />
             </div>
         </div>
+        
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+            <center> <img src="https://s-media-cache-ak0.pinimg.com/originals/e9/65/20/e96520439e9867e64a7164fee0a48a01.gif"></center>
+
+        </head>
+
     </div>
 }

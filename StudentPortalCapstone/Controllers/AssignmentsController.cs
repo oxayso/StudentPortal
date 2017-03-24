@@ -196,7 +196,7 @@ namespace StudentPortalCapstone.Controllers
             Assignments assignments = db.Assignments.Find(id);
             db.Assignments.Remove(assignments);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("DisplayAssignments", assignments);
         }
 
         protected override void Dispose(bool disposing)

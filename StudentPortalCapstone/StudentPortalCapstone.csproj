@@ -229,6 +229,7 @@
     <Content Include="Content\Images\Assignment-Management.png" />
     <Content Include="Content\Images\Attendance.jpg" />
     <Content Include="Content\Images\Choose.png" />
+    <Content Include="Content\Images\ClassAdded.png" />
     <Content Include="Content\Images\Classroom.png" />
     <Content Include="Content\Images\CodingEverything6.png" />
     <Content Include="Content\Images\CurrentClasses.png" />
