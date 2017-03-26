@@ -21,12 +21,13 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                
-                            <li>@Html.ActionLink("Download Assignment", "DownloadAssignment", "Assignments")</li>                                                                                   
-                            <li>@Html.ActionLink("Assignments", "FindAssignStudent", "Assignments")</li>
+
+                    <li>@Html.ActionLink("Download Assignment", "DownloadAssignment", "Assignments")</li>
+                    <li>@Html.ActionLink("Upload Assignment", "Create", "Assignments")</li>
+                    <li>@Html.ActionLink("Assignments", "FindAssignStudent", "Assignments")</li>
                     <li>@Html.ActionLink("Attendance", "Attendance", "Home")</li>
                     @*<li>@Html.ActionLink("Grades", "ShowStudentsAssignmentsForEdit", "ReportCards")</li>*@
-                    <li>@Html.ActionLink("Search", "Search", "Enrollments")</li>     
+                    <li>@Html.ActionLink("Search", "Search", "Enrollments")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

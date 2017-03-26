@@ -40,6 +40,17 @@ namespace StudentPortalCapstone.Controllers
             Response.ContentType = "application/octect-stream";
             Response.AppendHeader("content-disposition", filename);
             Response.TransmitFile(Server.MapPath(path));
+            {
+                  var client = new SmtpClient("smtp.mailtrap.io", 2525)
+            {
+                Credentials = new NetworkCredential("414b478b98bc51", "47d6f767300723"),
+                EnableSsl = true
+            };
+            client.Send("teacher@example.com", "student@example.com", "Download Confirmation", "Student, You have downloaded an assignment");
+            //Console.WriteLine("Sent");
+            //Console.ReadLine();
+            }
+
             Response.End();
             return View();
             
@@ -48,11 +59,22 @@ namespace StudentPortalCapstone.Controllers
         {
             return View("UploadRequest");
         }
+
         [HttpPost]
         public ActionResult Upload(HttpPostedFileBase file)
         {
             string path = Server.MapPath("~/Assignments/" + FileNameSaver.FileName);
-            file.SaveAs(path); // saving file
+            file.SaveAs(path); // saving file 
+            {
+                var client = new SmtpClient("smtp.mailtrap.io", 2525)
+                {
+                    Credentials = new NetworkCredential("414b478b98bc51", "47d6f767300723"),
+                    EnableSsl = true
+                };
+                client.Send("studentportal@example.com", "studentportal@example.com", "Upload Confirmation", "A message from Student Portal: An assignment has been uploaded!");
+                //Console.WriteLine("Sent");
+                //Console.ReadLine();
+            }
 
             return RedirectToAction("FindAssignmentForClass");
             
@@ -141,6 +163,8 @@ namespace StudentPortalCapstone.Controllers
             ViewBag.RosterId = new SelectList(db.Rosters, "Id", "ClassName", assignments.RosterId);
             return View(assignments);
         }
+
+       
 
         // GET: Assignments/Edit/5
         public ActionResult Edit(int? id)
