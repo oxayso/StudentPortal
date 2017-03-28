@@ -686,6 +686,7 @@
     <Content Include="Views\Attendances\FindAttendance.cshtml" />
     <Content Include="Views\Attendances\GetAttendanceForStudent.cshtml" />
     <Content Include="Views\Attendances\FindMyAttendance.cshtml" />
+    <Content Include="Views\Assignments\FindMyGrade.cshtml" />
     <None Include="Views\Shared\_LayoutTeacher.cshtml" />
   </ItemGroup>
   <ItemGroup>

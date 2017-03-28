@@ -31,6 +31,17 @@ namespace StudentPortalCapstone.Controllers
             return View("IndexStudent");
         }
 
+        public ActionResult FindMyGrade()
+        {
+            var email = User.Identity.Name;
+            var assignments =
+                db.ReportCards.Include(y => y.Assignments)
+                    .Include(y => y.User)
+                    .Where(y => y.User.Email == email)
+                    .ToList();
+            return View(assignments);
+        }
+
         public ActionResult Download(int? id)
         {
             var assignment = db.Assignments.Find(id);
