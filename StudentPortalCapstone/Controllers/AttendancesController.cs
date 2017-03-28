@@ -108,6 +108,13 @@ namespace StudentPortalCapstone.Controllers
             return View();
         }
 
+        public ActionResult FindMyAttendance()
+        {
+            var email = User.Identity.Name;
+            var attendance = db.Attendance.Include(y => y.User).Include(y => y.Roster).Where(y => y.User.Email == email).ToList();
+
+            return View(attendance);
+        }
 
         public ActionResult GetAttendanceForStudent(User person)
         {
