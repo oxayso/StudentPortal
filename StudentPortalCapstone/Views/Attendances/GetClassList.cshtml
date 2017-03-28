@@ -5,6 +5,15 @@
     Layout = "~/Views/Shared/_LayoutTeacher.cshtml";
 }
 
+<br />
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+    <center> <img src="~/Content/Images/Attendance.png"></center>
+
+</head>
+
 <h2>Course Name: @Model.attendances[0].Roster.ClassName</h2>
 <h3>Today's Attendance for @Model.attendances[0].Date.DayOfWeek, @Model.attendances[0].Date.ToShortDateString()</h3>
 

@@ -4,8 +4,17 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutTeacher.cshtml";
 }
+<br/>
 
-<h2>Attendance</h2>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+    <center> <img src="~/Content/Images/Attendance.png"></center>
+
+</head>
+
+<br />
 
 @using (Html.BeginForm("GetClassList", "Attendances"))
 {
@@ -16,7 +25,7 @@
         <hr />
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Roster.Id, "RosterId", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Roster.Id, "Class Name", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("RosterId", null, htmlAttributes: new { @class = "form-control" })
                 @*@Html.ValidationMessageFor(model => model.Roster.Id, "", new { @class = "text-danger" })*@

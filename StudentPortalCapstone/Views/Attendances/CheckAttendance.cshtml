@@ -5,28 +5,41 @@
     Layout = "~/Views/Shared/_LayoutTeacher.cshtml";
 }
 
-<h2>Check Attendance</h2>
+<br />
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+    <center> <img src="~/Content/Images/Attendance.jpg"></center>
+
+</head>
+
+<br />
 
 @using (Html.BeginForm("GetAttendance", "Attendances"))
 {
-    <h3>Specify a Course Name and Date </h3>
+    <h1>Specify a Course Name and Date to review attendance</h1>
     <div class="form-inline">
         @* @Html.LabelFor(model => model.RosterId, "RosterId", htmlAttributes: new { @class = "control-label col-md-2" })*@
+    
         <div class="col-md-10">
-            @Html.DropDownList("RosterId", null, htmlAttributes: new { @class = "form-control" })
+            
+            @Html.DropDownList("RosterId", null, htmlAttributes: new {@class = "form-control"})
             @*@Html.ValidationMessageFor(model => model.Roster.Id, "", new { @class = "text-danger" })*@
         </div>
     </div>
 
     <div class="form-inline">
         <div class="col-md-10">
+            <br />
             <input type="date" name="Date">
         </div>
     </div>
 
     <div class="form-inline">
         <div class="col-md-10">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <br />
+            <button type="submit" class="btn btn-success">Check</button>
         </div></div>
 }
 

@@ -238,6 +238,8 @@
     <Content Include="Content\Images\Assignment-Management.png" />
     <Content Include="Content\Images\Attendance.jpg" />
     <Content Include="Content\Images\Attendance.png" />
+    <Content Include="Content\Images\AttendanceChecklist.jpg" />
+    <Content Include="Content\Images\AttendanceMatters.png" />
     <Content Include="Content\Images\Choose.png" />
     <Content Include="Content\Images\ClassAdded.png" />
     <Content Include="Content\Images\Classroom.png" />
