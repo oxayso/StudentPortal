@@ -170,6 +170,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AssignmentsController.cs" />
+    <Compile Include="Controllers\AttendancesController.cs" />
     <Compile Include="Controllers\EnrollmentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -202,10 +203,18 @@
     <Compile Include="Migrations\201703240223000_ModelForReportCard.Designer.cs">
       <DependentUpon>201703240223000_ModelForReportCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703280022491_AddedAttendanceModel.cs" />
+    <Compile Include="Migrations\201703280022491_AddedAttendanceModel.Designer.cs">
+      <DependentUpon>201703280022491_AddedAttendanceModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Assignments.cs" />
+    <Compile Include="Models\Attendance.cs" />
+    <Compile Include="Models\AttendanceViewModel.cs" />
+    <Compile Include="Models\CheckAttendanceViewModel.cs" />
     <Compile Include="Models\ClassList.cs" />
+    <Compile Include="Models\DisplayAttendanceViewModel.cs" />
     <Compile Include="Models\Enrollment.cs" />
     <Compile Include="Models\FileNameSaver.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -236,6 +245,7 @@
     <Content Include="Content\Images\DisplayAssignments.png" />
     <Content Include="Content\Images\Education.png" />
     <Content Include="Content\Images\Illustration.png" />
+    <Content Include="Content\Images\maginifyingglass.jpg" />
     <Content Include="Content\Images\Results.jpg" />
     <Content Include="Content\Images\ResultsMagnifyingGlass.png" />
     <Content Include="Content\Images\Students.png" />
@@ -665,6 +675,16 @@
     <Content Include="Views\ReportCards\ShowStudentsAssignmentsForEdit.cshtml" />
     <Content Include="Views\Assignments\DownloadAssignment.cshtml" />
     <Content Include="Views\Assignments\DisplayAssignmentsForDownload.cshtml" />
+    <Content Include="Views\Attendances\Create.cshtml" />
+    <Content Include="Views\Attendances\Delete.cshtml" />
+    <Content Include="Views\Attendances\Details.cshtml" />
+    <Content Include="Views\Attendances\Edit.cshtml" />
+    <Content Include="Views\Attendances\Index.cshtml" />
+    <Content Include="Views\Attendances\GetClassList.cshtml" />
+    <Content Include="Views\Attendances\CheckAttendance.cshtml" />
+    <Content Include="Views\Attendances\GetAttendance.cshtml" />
+    <Content Include="Views\Attendances\FindAttendance.cshtml" />
+    <Content Include="Views\Attendances\GetAttendanceForStudent.cshtml" />
     <None Include="Views\Shared\_LayoutTeacher.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -696,6 +716,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703240223000_ModelForReportCard.resx">
       <DependentUpon>201703240223000_ModelForReportCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703280022491_AddedAttendanceModel.resx">
+      <DependentUpon>201703280022491_AddedAttendanceModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

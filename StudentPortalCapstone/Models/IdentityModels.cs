@@ -28,6 +28,7 @@ namespace StudentPortalCapstone.Models
         public DbSet<Enrollment> Enrollments { get; set; }
 
         public DbSet<Assignments> Assignments { get; set; }
+        public DbSet<Attendance> Attendance { get; set; }
 
         public DbSet<ReportCard> ReportCards { get; set; }
         public ApplicationDbContext()

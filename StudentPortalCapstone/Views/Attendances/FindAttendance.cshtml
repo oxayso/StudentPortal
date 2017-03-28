@@ -1,11 +1,16 @@
 ﻿@model StudentPortalCapstone.Models.User
 
 @{
-    ViewBag.Title = "Search";
+    ViewBag.Title = "FindAttendance";
     Layout = "~/Views/Shared/_LayoutTeacher.cshtml";
 }
+
+
+@*<h2>Get Student Attendance</h2>*@
+
 <br />
-<h2>Search for a specific student or instructor:</h2>
+
+<h2>Search for a Student by Email </h2>
 
 <style>
     input[type=text] {
@@ -29,35 +34,43 @@
         }
 </style>
 
+@*<p>Animated search form:</p>*@
 
-@using (Html.BeginForm("FindPerson", "Enrollments"))
+@*<form>
+        <input type="text" name="search" placeholder="Search..">
+    </form>*@
+
+@using (Html.BeginForm("GetAttendanceForStudent", "Attendances"))
 {
     @*<input type="text" name="search" placeholder="Search..">
         <input type="submit" value="Find" />*@
 
     <div class="form-group">
-        @*@Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
-            <input type="submit" value="Find" class="btn btn-success" />
-
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+            @*@Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })*@
+            <br />
+            <input type="submit" value="Find" class="btn btn-warning" />
         </div>
     </div>
 
-   
+
+
+
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
-        <center> <img src="https://s-media-cache-ak0.pinimg.com/originals/e9/65/20/e96520439e9867e64a7164fee0a48a01.gif" ></center>
+        <center> <img src="https://s-media-cache-ak0.pinimg.com/originals/e9/65/20/e96520439e9867e64a7164fee0a48a01.gif"></center>
 
     </head>
 
+        <br />
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                @*<input type="submit" value="Find" class="btn btn-success" />*@
-            </div>
-        </div>
+        @*<div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Find" class="btn btn-success" />
+                </div>
+            </div>*@
         }

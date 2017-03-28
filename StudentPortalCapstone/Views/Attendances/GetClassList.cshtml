@@ -1,0 +1,74 @@
+﻿@model StudentPortalCapstone.Models.AttendanceViewModel
+
+@{
+    ViewBag.Title = "GetClassList";
+    Layout = "~/Views/Shared/_LayoutTeacher.cshtml";
+}
+
+<h2>Course Name: @Model.attendances[0].Roster.ClassName</h2>
+<h3>Today's Attendance for @Model.attendances[0].Date.DayOfWeek, @Model.attendances[0].Date.ToShortDateString()</h3>
+
+<br />
+@using (Html.BeginForm("SetAttendance", "Attendances", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <table class="table">
+        <tr>
+            @*<th>
+                    <h4>Date</h4>
+                </th>*@
+            <th>
+                @*@Html.DisplayNameFor(model => model.Student.name)*@
+                <h5><strong>First Name</strong></h5>
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Date)*@
+                <h5><strong>Last Name</strong></h5>
+            </th>
+            <th>
+
+                <h5><strong>User Name</strong></h5>
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Attended)*@
+                <h5><strong>Present</strong></h5>
+            </th>
+            <th></th>
+        </tr>
+
+        @for (int i = 0; i < Model.attendances.Count; i++)
+        {
+            <tr>
+                @*<td>
+                        @Html.HiddenFor(x => Model.attendances[i].Id)
+                        @Html.HiddenFor(x => Model.attendances[i].Date)
+                        @Html.DisplayFor(x => Model.attendances[i].Date)
+                        @Html.HiddenFor(x => Model.attendances[i].Date)
+
+                    </td>*@
+                <td>
+                    @Html.HiddenFor(x => Model.attendances[i].Id)
+                    @Html.HiddenFor(x => Model.attendances[i].Date)
+
+                    @Html.HiddenFor(x => Model.attendances[i].UserId)
+
+                    @Html.DisplayFor(x => Model.attendances[i].User.FirstName)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(x => Model.attendances[i].User.LastName)
+                </td>
+                <td>
+
+                    @Html.DisplayFor(x => Model.attendances[i].User.Email)
+                </td>
+                <td>
+                    @Html.CheckBoxFor(x => Model.attendances[i].isPresent)
+                </td>
+            </tr>
+        }
+    </table>
+
+    <button type="submit" id="btnSave" class="btn btn-warning">Submit Attendance</button>
+}
